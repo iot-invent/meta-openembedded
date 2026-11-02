@@ -23,11 +23,9 @@ SRC_URI = " \
     file://nginx.service \
     file://nginx-fix-pidfile.patch \
     file://0001-configure-libxslt-conf.patch \
-    file://CVE-2024-7347-1.patch \
-    file://CVE-2024-7347-2.patch \
     file://CVE-2025-53859.patch \
-    file://CVE-2025-23419.patch \
     file://CVE-2026-1642.patch \
+    file://CVE-2026-27784.patch \
 "
 
 inherit siteinfo update-rc.d useradd systemd
@@ -193,3 +191,5 @@ USERADD_PARAM:${PN} = " \
     --groups www-data \
     --shell ${base_sbindir}/nologin \
     --user-group ${NGINX_USER}"
+
+CVE_PRODUCT = "nginx:nginx f5:nginx_open_source f5:nginx"

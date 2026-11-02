@@ -14,6 +14,13 @@ SRC_URI += " \
         file://run-ptest \
         file://CVE-2025-64076.patch \
         file://CVE-2025-68131.patch \
+        file://CVE-2026-26209-pre1.patch \
+        file://CVE-2026-26209.patch \
+        file://CVE-2026-26209_p1.patch \
+        file://CVE-2026-26209_p2.patch \
+        file://CVE-2026-26209-dependent.patch \
+        file://CVE-2026-26209_p3.patch \
+        file://CVE-2026-26209_p4.patch \
 "
 
 RDEPENDS:${PN}-ptest += " \
@@ -31,5 +38,7 @@ do_install_ptest() {
 RDEPENDS:${PN} += " \
     python3-datetime \
 "
+
+CVE_PRODUCT = "agronholm:cbor2"
 
 BBCLASSEXTEND = "native nativesdk"

@@ -11,6 +11,7 @@ SRC_URI = "\
     https://github.com/kkos/oniguruma/releases/download/v${PV}/${BP}.tar.gz \
     file://0001-build-don-t-link-against-host-system-libraries.patch \
     file://0002-build-enable-serial-tests-automake-option-for-ptest.patch \
+    file://5f1408dee4a01dee60c4cd67f2e2e46484ef50a5.patch \
     file://run-ptest \
 "
 
@@ -32,3 +33,6 @@ do_install_ptest() {
 }
 
 PROVIDES += "oniguruma"
+
+# Add CVE_PRODUCT to match the NVD CPE product name
+CVE_PRODUCT = "oniguruma_project:oniguruma"
